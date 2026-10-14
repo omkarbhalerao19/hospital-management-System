@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Community Feed - MediCore</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header class="navbar">
+        <div class="container nav-container">
+            <h1>🏥 MediCore Care</h1>
+            <nav id="nav-links">
+                <a href="index.html">Home</a>
+                <a href="opd-booking.html">OPD Booking</a>
+                <a href="community.html" class="active">Community Feed</a>
+                <a href="dashboard.html" class="btn-nav">Dashboard</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container community-layout">
+        <section class="form-card">
+            <h2>Broadcast Community Help Request</h2>
+            <form id="community-form">
+                <div class="form-group">
+                    <label>Request Title</label>
+                    <input type="text" id="title" required placeholder="e.g., O- Negative Blood Needed Urgently">
+                </div>
+                <div class="form-group">
+                    <label>Category</label>
+                    <select id="category">
+                        <option value="Blood Emergency">Blood Emergency</option>
+                        <option value="Medical Equipment Share">Medical Equipment Share</option>
+                        <option value="Health Camp">Health Camp</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Blood Group (If Applicable)</label>
+                    <select id="bloodGroupNeeded">
+                        <option value="N/A">N/A</option>
+                        <option value="A+">A+</option><option value="A-">A-</option>
+                        <option value="B+">B+</option><option value="B-">B-</option>
+                        <option value="AB+">AB+</option><option value="AB-">AB-</option>
+                        <option value="O+">O+</option><option value="O-">O-</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Hospital or Location</label>
+                    <input type="text" id="hospitalOrLocation" required placeholder="City General Hospital, Ward 4">
+                </div>
+                <div class="form-group">
+                    <label>Contact Phone</label>
+                    <input type="tel" id="contactPhone" required placeholder="+91 9876543210">
+                </div>
+                <div class="form-group">
+                    <label>Detailed Description</label>
+                    <textarea id="description" rows="3" required placeholder="Provide patient condition or equipment details..."></textarea>
+                </div>
+                <button type="submit" class="btn-submit">Publish Alert</button>
+            </form>
+        </section>
+
+        <section class="feed-card">
+            <h2>Active Community Alerts</h2>
+            <div id="community-feed">
+                <p>Loading community posts...</p>
+            </div>
+        </section>
+    </main>
+    <script src="js/auth.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Dashboard - MediCore</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header class="navbar">
+        <div class="container nav-container">
+            <h1>🏥 MediCore Care</h1>
+            <nav id="nav-links">
+                <a href="index.html">Home</a>
+                <a href="opd-booking.html">OPD Booking</a>
+                <a href="community.html">Community Feed</a>
+                <a href="#" id="logout-btn" class="btn-nav">Logout</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container dashboard-main">
+        <div class="profile-card">
+            <h2>User Profile</h2>
+            <p><strong>Name:</strong> <span id="user-name"></span></p>
+            <p><strong>Email:</strong> <span id="user-email"></span></p>
+            <p><strong>Role:</strong> <span id="user-role"></span></p>
+            <p><strong>Blood Group:</strong> <span id="user-blood"></span></p>
+        </div>
+        <div class="dashboard-actions">
+            <h3>Quick Actions</h3>
+            <div class="action-buttons">
+                <a href="opd-booking.html" class="btn-primary">Book Doctor Appointment</a>
+                <a href="community.html" class="btn-outline">Post Community Emergency</a>
+            </div>
+        </div>
+    </main>
+    <script src="js/auth.js"></script>
+    <script>
+        const user = JSON.parse(localStorage.getItem('medicore_user'));
+        if (!user) { window.location.href = 'login.html'; }
+        document.getElementById('user-name').textContent = user.name;
+        document.getElementById('user-email').textContent = user.email;
+        document.getElementById('user-role').textContent = user.role;
+        document.getElementById('user-blood').textContent = user.bloodGroup;
+    </script>
+</body>
+</html>

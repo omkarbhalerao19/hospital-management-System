@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OPD Booking - MediCore</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header class="navbar">
+        <div class="container nav-container">
+            <h1>🏥 MediCore Care</h1>
+            <nav id="nav-links">
+                <a href="index.html">Home</a>
+                <a href="opd-booking.html" class="active">OPD Booking</a>
+                <a href="community.html">Community Feed</a>
+                <a href="dashboard.html" class="btn-nav">Dashboard</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container opd-layout">
+        <section class="form-card">
+            <h2>Book OPD Doctor Consultation</h2>
+            <form id="booking-form">
+                <div class="form-group">
+                    <label>Select Doctor & Department</label>
+                    <select id="doctorSelect" required>
+                        <option value="Dr. Smitha Rao|Cardiologist|Room 101">Dr. Smitha Rao (Cardiologist - Room 101)</option>
+                        <option value="Dr. Amit Verma|General Physician|Room 102">Dr. Amit Verma (General Physician - Room 102)</option>
+                        <option value="Dr. Neha Kulkarni|Pediatrician|Room 103">Dr. Neha Kulkarni (Pediatrician - Room 103)</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Appointment Date</label>
+                    <input type="date" id="date" required>
+                </div>
+                <div class="form-group">
+                    <label>Time Slot</label>
+                    <select id="timeSlot" required>
+                        <option value="10:00 AM">10:00 AM</option>
+                        <option value="10:30 AM">10:30 AM</option>
+                        <option value="11:00 AM">11:00 AM</option>
+                        <option value="04:00 PM">04:00 PM</option>
+                        <option value="04:30 PM">04:30 PM</option>
+                    </select>
+                </div>
+                <button type="submit" class="btn-submit">Confirm & Generate Token</button>
+            </form>
+        </section>
+
+        <section class="queue-card">
+            <h2>Live OPD Queue Board</h2>
+            <div id="appointments-list">
+                <p>Loading active tokens...</p>
+            </div>
+        </section>
+    </main>
+    <script src="js/auth.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>
